@@ -1,0 +1,48 @@
+const menuStyles = {
+  bmBurgerButton: {
+    position: "relative",
+    width: "32px",
+    height: "20px",
+    bottom: "10px",
+    right: "10px",
+  },
+  bmBurgerBars: {
+    background: "#636363",
+  },
+  bmBurgerBarsHover: {
+    background: "#a90000",
+  },
+  bmCrossButton: {
+    height: "24px",
+    width: "24px",
+  },
+  bmCross: {
+    background: "#bdc3c7",
+  },
+  bmMenuWrap: {
+    position: "fixed",
+    width: "60%",
+    height: "100%",
+    top: "0px",
+  },
+  bmMenu: {
+    background: "#1C1C1C",
+    padding: "2.5em 1.5em 0",
+    fontSize: "1.15em",
+  },
+  bmMorphShape: {
+    fill: "#373a47",
+  },
+  bmItemList: {
+    color: "#b8b7ad",
+    padding: "0.8em",
+  },
+  bmItem: {
+    display: "inline-block",
+  },
+  bmOverlay: {
+    background: "rgba(0, 0, 0, 0.3)",
+  },
+};
+
+export default menuStyles;
