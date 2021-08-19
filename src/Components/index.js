@@ -1,4 +1,13 @@
-export { Logo } from "./Logo";
-export { Navbar } from "./Navbar";
-export { Wrapper } from "./Wrapper";
-export { Button } from "./Button";
+export * from "./Logo";
+export * from "./Navbar";
+export * from "./Wrapper";
+export * from "./Button";
+export * from "./Input";
+export * from "./Footer";
+export * from "./Typography";
+export * from "./Card";
+export * from "./Header";
+export * from "./Flex";
+export * from "./Icon";
+export * from "./Form";
+export * from "./Input";

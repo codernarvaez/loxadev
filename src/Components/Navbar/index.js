@@ -1,28 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import tw from "twin.macro";
 import { Logo } from "components/Logo";
 import { NavItems } from "components/Navbar/NavItems";
 import { Button } from "components/Button";
 import { Wrapper } from "components/Wrapper";
+import { SCREENS } from "utils/constants";
+import { FlexRow } from "components/Flex";
 
-const NavbarContainer = styled.div`
+const NavbarContainer = styled(FlexRow)`
   min-height: 80px;
-  ${tw`
-    flex
-    flex-row
-    items-end
-    justify-between
-  `}
+  align-items: flex-end;
 `;
 
 const ButtonContainer = styled.div`
-  ${tw`
-    hidden
-    md:inline mr-2.5
-    lg:order-1
-    xl:mr-14
-  `}
+  display: none;
+
+  @media (min-width: ${SCREENS.lg}) {
+    display: inline;
+    order: 1;
+    margin-right: 3.75rem;
+  }
 `;
 
 export const Navbar = () => {

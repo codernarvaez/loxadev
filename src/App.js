@@ -1,16 +1,29 @@
+import { useEffect, useState } from "react";
 import { AppRouter } from "router/AppRouter";
-import styled from "styled-components";
-import tw from "twin.macro";
-
-const AppContainer = styled.div`
-  ${tw`bg-loxadev-ligth-gray min-h-full w-full`}
-`;
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme, GlobalStyles } from "./utils/theme";
 
 function App() {
+  const [theme, setTheme] = useState("light");
+  const isDarkTheme = theme === "dark";
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (savedTheme && ["dark", "light"].includes(savedTheme)) {
+      setTheme(savedTheme);
+    } else if (prefersDark) {
+      setTheme("dark");
+    }
+  }, []);
+
   return (
-    <AppContainer>
+    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+      <GlobalStyles />
       <AppRouter />
-    </AppContainer>
+    </ThemeProvider>
   );
 }
 

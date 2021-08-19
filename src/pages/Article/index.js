@@ -1,13 +1,11 @@
-import { Navbar } from "components";
-import { Footer } from "components/Footer";
+import React, { Fragment } from "react";
+import styled from "styled-components";
+import tw from "twin.macro";
+import { Footer, Navbar } from "components";
 import { ArticleContent } from "pages/Article/ArticleContent";
 import { ArticleCover } from "pages/Article/ArticleCover";
 import { ArticleRecent } from "pages/Article/ArticleRecent";
 import { OtherTags } from "pages/Article/OtherTags";
-import React from "react";
-import { Fragment } from "react";
-import styled from "styled-components";
-import tw from "twin.macro";
 
 const ArticleContainer = styled.div`
   ${tw`

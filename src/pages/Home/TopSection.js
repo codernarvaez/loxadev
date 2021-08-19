@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-import { Button, Wrapper } from "components";
+import { OutlineButton, Wrapper } from "components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
@@ -167,7 +167,7 @@ export const TopSection = () => {
               nonummy nibh euismod tincidunt ut laoreet.
             </Description>
 
-            <Button outlined>Conoce todo sobre nosotros</Button>
+            <OutlineButton>Conoce todo sobre nosotros</OutlineButton>
 
             <SocialContainer>
               <SocialIcon>

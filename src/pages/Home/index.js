@@ -1,8 +1,6 @@
-import { Navbar } from "components";
-import { Footer } from "components/Footer";
+import React, { Fragment } from "react";
+import { Footer, Navbar } from "components";
 import { TopSection } from "pages/Home/TopSection";
-import React from "react";
-import { Fragment } from "react";
 
 export const Home = () => {
   return (
