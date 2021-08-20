@@ -11,3 +11,5 @@ export * from "./Flex";
 export * from "./Icon";
 export * from "./Form";
 export * from "./Input";
+export * from "./TextArea";
+export * from "./Select";

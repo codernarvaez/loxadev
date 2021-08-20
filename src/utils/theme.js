@@ -16,6 +16,7 @@ export const lightTheme = {
     icon: "#CBD9EF",
     main: "#3F3F3F",
     card: "#FFFFFF",
+    switch: "#FFFFFF",
     shadow: "#00000029",
   },
   text: {
@@ -32,20 +33,22 @@ export const lightTheme = {
 
 export const darkTheme = {
   bg: {
-    default: "#F4F4F4",
-    primary: "#1D5CFC",
-    secondary: "#636363",
+    default: "#1D2029",
+    primary: "#6892FD",
+    secondary: "#F4F4F4",
     icon: "#CBD9EF",
     main: "#3F3F3F",
-    card: "#FFFFFF",
+    card: "#252843",
     shadow: "#00000029",
   },
   text: {
-    default: "#3F3F3F",
-    main: "#1C1C1C",
-    primary: "#1D5CFC",
+    default: "#9F9F9F",
+    main: "#FFFFFF",
+    primary: "#8EAEFE",
     bg: "#F4F4F4",
     icon: "#CBD9EF",
-    secondary: "#636363",
+    secondary: "#F4F4F4",
+    alt: "#FFFFFF",
+    danger: "#f44336",
   },
 };

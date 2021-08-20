@@ -1,58 +1,53 @@
 import styled from "styled-components";
-
-export const StyledLabel = styled.label`
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 0.75rem;
-  color: ${({ theme, invalid }) =>
-    invalid ? theme.text.danger : theme.text.secondary};
-`;
+import { styledInputBase } from "components/globals";
+import { FormGroup, Label } from "components/Form";
 
 export const StyledInput = styled.input`
-  width: 100%;
-  border: 0;
-  border-bottom: 1px solid
-    ${({ theme, invalid }) =>
-      invalid ? theme.text.danger : theme.text.secondary};
-  outline: 0;
-  font-size: 1rem;
-  font-weight: 300;
-  color: ${({ theme }) => theme.text.main};
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
+  ${styledInputBase}
+`;
 
-  &::placeholder {
-    color: transparent;
+export const StyledToggleWrapper = styled(FormGroup)`
+  padding: 0;
+`;
+
+export const StyledToggleLabel = styled(Label)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 26px;
+  border-radius: 15px;
+  background: ${({ theme }) => theme.bg.secondary};
+  cursor: pointer;
+  &::after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    margin: 3px;
+    background: ${({ theme }) => theme.bg.switch};
+    box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
   }
+`;
 
-  &:placeholder-shown ~ ${StyledLabel} {
-    font-size: 0.75rem;
-    cursor: text;
-    top: 25px;
-  }
-
-  &:focus {
-    & ~ ${StyledLabel} {
-      position: absolute;
-      top: 0;
+export const StyledToggle = styled.input`
+  opacity: 0;
+  z-index: 1;
+  border-radius: 15px;
+  width: 42px;
+  height: 26px;
+  &:checked + ${StyledToggleLabel} {
+    background: ${({ theme }) => theme.bg.primary};
+    &::after {
+      content: "";
       display: block;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      margin-left: 21px;
       transition: 0.2s;
-      font-size: 0.75rem;
-      color: ${({ theme, invalid }) =>
-        invalid ? theme.text.danger : theme.text.primary};
     }
-    padding-bottom: 6px;
-    font-weight: 300;
-    border-width: 2px;
-    border-image: linear-gradient(
-      to right,
-      ${({ theme, invalid }) =>
-        invalid ? theme.text.danger : theme.text.primary},
-      ${({ theme }) => theme.text.secondary}
-    );
-    border-image-slice: 1;
   }
 `;

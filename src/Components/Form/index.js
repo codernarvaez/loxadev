@@ -24,7 +24,7 @@ export const FormGroup = styled.div`
 export const StyledFormFeedback = styled(P)`
   color: ${({ theme }) => theme.text.danger};
   font-size: 0.75rem;
-  margin-top: 12px;
+  margin-top: 5px;
 `;
 
 export const StyledFormHelper = styled(StyledFormFeedback)`
@@ -45,4 +45,14 @@ export const FormInputWrapper = styled.div`
       width: calc(100% / 2 - 1.25rem);
     }
   }
+`;
+
+export const Label = styled.label`
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 0.75rem;
+  color: ${({ theme, invalid }) =>
+    invalid ? theme.text.danger : theme.text.secondary};
 `;
