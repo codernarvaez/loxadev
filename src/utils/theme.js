@@ -18,6 +18,7 @@ export const lightTheme = {
     card: "#FFFFFF",
     switch: "#FFFFFF",
     shadow: "#00000029",
+    white: "#FFFFFF",
   },
   text: {
     default: "#3F3F3F",

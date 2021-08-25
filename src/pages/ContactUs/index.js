@@ -1,18 +1,7 @@
 import React, { Fragment } from "react";
 import { Footer, Header, Navbar, SocialIcon, Wrapper } from "components";
 import * as S from "pages/ContactUs/ContactUs.style";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEnvelope,
-  faEnvelopeOpen,
-  faMapMarkerAlt,
-  faPhone,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebookF,
-  faInstagram,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+import * as Fa from "react-icons/fa";
 import { ContactUsForm } from "pages/ContactUs/ContactUsForm";
 
 export const ContactUs = () => {
@@ -31,7 +20,7 @@ export const ContactUs = () => {
             <S.FormCardHeader>
               <S.FormCardTitle>Enviar un mensaje</S.FormCardTitle>
               <S.FormCardIcon>
-                <FontAwesomeIcon icon={faEnvelopeOpen} />
+                <Fa.FaEnvelopeOpen />
               </S.FormCardIcon>
             </S.FormCardHeader>
 
@@ -43,19 +32,19 @@ export const ContactUs = () => {
             <S.InfoCardDetails>
               <S.InfoCardItem>
                 <S.InfoCardIcon>
-                  <FontAwesomeIcon icon={faPhone} />
+                  <Fa.FaPhone />
                 </S.InfoCardIcon>
                 <S.InfoCardItemText>(+593) 072713879</S.InfoCardItemText>
               </S.InfoCardItem>
               <S.InfoCardItem>
                 <S.InfoCardIcon>
-                  <FontAwesomeIcon icon={faEnvelope} />
+                  <Fa.FaEnvelope />
                 </S.InfoCardIcon>
                 <S.InfoCardItemText>loxadev@contacto.com</S.InfoCardItemText>
               </S.InfoCardItem>
               <S.InfoCardItem>
                 <S.InfoCardIcon>
-                  <FontAwesomeIcon icon={faMapMarkerAlt} />
+                  <Fa.FaMapMarkedAlt />
                 </S.InfoCardIcon>
                 <S.InfoCardItemText>
                   Avenida Principal 200-14 <small>Calle Secundaria</small>
@@ -65,13 +54,13 @@ export const ContactUs = () => {
 
             <S.Social>
               <SocialIcon>
-                <FontAwesomeIcon icon={faFacebookF} />
+                <Fa.FaFacebookF />
               </SocialIcon>
               <SocialIcon>
-                <FontAwesomeIcon icon={faTwitter} />
+                <Fa.FaTwitter />
               </SocialIcon>
               <SocialIcon>
-                <FontAwesomeIcon icon={faInstagram} />
+                <Fa.FaInstagram />
               </SocialIcon>
             </S.Social>
           </S.InfoCard>

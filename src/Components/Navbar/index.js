@@ -10,6 +10,7 @@ import { FlexRow } from "components/Flex";
 const NavbarContainer = styled(FlexRow)`
   min-height: 80px;
   align-items: flex-end;
+  justify-content: space-between;
 `;
 
 const ButtonContainer = styled.div`

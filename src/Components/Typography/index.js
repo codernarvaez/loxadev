@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { Link as RouterLink } from "react-router-dom";
 
 export const H1 = styled.h1`
   color: ${({ theme }) => theme.text.default};
   font-weight: 800;
-  font-size: 3rem;
+  font-size: 48px;
   line-height: 1;
   margin: 0;
   padding: 0;
@@ -12,7 +13,7 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   color: ${({ theme }) => theme.text.default};
   font-weight: 800;
-  font-size: 2.25rem;
+  font-size: 36px;
   line-height: 1.25;
   margin: 0;
   padding: 0;
@@ -93,8 +94,18 @@ export const Small = styled.small`
 export const Lead = styled.p`
   color: ${({ theme }) => theme.text.default};
   font-weight: 400;
-  font-size: 1.125rem;
+  font-size: 18px;
   line-height: 1.75;
   margin: 0;
   padding: 0;
+`;
+
+export const Link = styled(RouterLink)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.text.default};
+  transition: color 300ms ease-in-out;
+
+  &:hover {
+    color: ${({ theme }) => theme.text.primary};
+  }
 `;

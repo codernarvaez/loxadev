@@ -1,46 +1,14 @@
 import React from "react";
-import styled, { css } from "styled-components";
-import tw from "twin.macro";
 import { slide as Menu } from "react-burger-menu";
 import { useMediaQuery } from "react-responsive";
+
 import { SCREENS } from "utils/constants";
+import {
+  ListContainer,
+  NavItem,
+  NavItemLink,
+} from "components/Navbar/Navbar.style";
 import menuStyles from "./menuStyles";
-
-const ListContainer = styled.ul`
-  ${tw`
-        flex
-        list-none
-        h-8 md:h-11
-        items-center
-        gap-14
-    `}
-`;
-
-const NavItem = styled.li`
-  ${tw`
-        text-sm
-        md:text-base
-        text-loxadev-dark
-        font-medium
-        cursor-pointer
-        transition
-        duration-300
-        ease-in-out
-        hover:text-loxadev-primary
-    `}
-
-  ${({ menu }) =>
-    menu &&
-    css`
-      ${tw`
-      text-white
-      text-xl
-      mb-3
-      focus:text-white
-      hover:text-loxadev-light-blue
-    `}
-    `}
-`;
 
 export const NavItems = () => {
   const isMobile = useMediaQuery({ maxWidth: SCREENS.lg });
@@ -49,20 +17,28 @@ export const NavItems = () => {
     return (
       <Menu right styles={menuStyles}>
         <ListContainer>
-          <NavItem menu>
-            <a href="#app">Blog</a>
+          <NavItem>
+            <NavItemLink to="#app" menu={"true"}>
+              Blog
+            </NavItemLink>
           </NavItem>
 
-          <NavItem menu>
-            <a href="#app">Nosotros</a>
+          <NavItem>
+            <NavItemLink to="#app" menu={"true"}>
+              Nosotros
+            </NavItemLink>
           </NavItem>
 
-          <NavItem menu>
-            <a href="#app">Servicios</a>
+          <NavItem>
+            <NavItemLink to="#app" menu={"true"}>
+              Servicios
+            </NavItemLink>
           </NavItem>
 
-          <NavItem menu>
-            <a href="#app">Productos</a>
+          <NavItem>
+            <NavItemLink to="#app" menu={"true"}>
+              Productos
+            </NavItemLink>
           </NavItem>
         </ListContainer>
       </Menu>
@@ -71,19 +47,19 @@ export const NavItems = () => {
   return (
     <ListContainer>
       <NavItem>
-        <a href="#app">Blog</a>
+        <NavItemLink to="#app">Blog</NavItemLink>
       </NavItem>
 
       <NavItem>
-        <a href="#app">Nosotros</a>
+        <NavItemLink to="#app">Nosotros</NavItemLink>
       </NavItem>
 
       <NavItem>
-        <a href="#app">Servicios</a>
+        <NavItemLink to="#app">Servicios</NavItemLink>
       </NavItem>
 
       <NavItem>
-        <a href="#app">Productos</a>
+        <NavItemLink to="#app">Productos</NavItemLink>
       </NavItem>
     </ListContainer>
   );

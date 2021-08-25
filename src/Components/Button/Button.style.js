@@ -23,7 +23,9 @@ export const StyledButton = styled.button`
   transition: all 200ms ease-in-out;
   border-color: transparent;
   border-width: 2px;
+  cursor: pointer;
   border-style: solid;
+
   &:hover {
     background: transparent;
     color: ${({ theme }) => theme.text.primary};
