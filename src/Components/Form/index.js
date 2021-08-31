@@ -5,6 +5,7 @@ import { SCREENS } from "utils/constants";
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   button[type="submit"] {
     margin-top: 20px;

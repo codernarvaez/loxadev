@@ -25,6 +25,7 @@ export const StyledButton = styled.button`
   border-width: 2px;
   cursor: pointer;
   border-style: solid;
+  width: ${({ block }) => (block ? "100%" : "auto")};
 
   &:hover {
     background: transparent;

@@ -21,8 +21,6 @@ export const ContactUsForm = () => {
   const methods = useForm({ resolver });
   const { handleSubmit } = methods;
 
-  console.log(`methods.getValues()`, methods.getValues());
-
   const onSubmit = (data) => {
     console.log(`data`, data);
   };

@@ -40,7 +40,7 @@ export const H4 = styled.h4`
 export const H5 = styled.h5`
   color: ${({ theme }) => theme.text.default};
   font-weight: 500;
-  font-size: 1.25rem;
+  font-size: 20px;
   line-height: 1.4;
   margin: 0;
   padding: 0;
@@ -48,7 +48,7 @@ export const H5 = styled.h5`
 
 export const H6 = styled.h6`
   color: ${({ theme }) => theme.text.default};
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.125rem;
   line-height: 1.5;
   margin: 0;
