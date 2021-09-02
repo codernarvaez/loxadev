@@ -89,3 +89,21 @@ export const Copyright = styled(P)`
     justify-self: flex-end;
   }
 `;
+
+export const StyledDashboardFooter = styled.footer`
+  outline: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+  @media (min-width: ${SCREENS.md}) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
+
+export const DashboardCopyright = styled(Copyright)`
+  font-size: 16px;
+  color: ${({ theme }) => theme.text.secondary};
+`;

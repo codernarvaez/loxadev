@@ -13,6 +13,8 @@ import {
   SocialIcon,
   StyledFooter,
   Logo,
+  StyledDashboardFooter,
+  DashboardCopyright,
 } from "components/Footer/Footer.style";
 
 import { Link } from "components/Typography";
@@ -64,3 +66,23 @@ export const Footer = () => {
     </StyledFooter>
   );
 };
+
+export const DashboardFooter = () => (
+  <StyledDashboardFooter>
+    <DashboardCopyright>
+      &copy; {new Date().getFullYear()} Loxadev
+    </DashboardCopyright>
+
+    <SocialContainer>
+      <SocialIcon>
+        <FA.FaFacebookF />
+      </SocialIcon>
+      <SocialIcon>
+        <FA.FaTwitter />
+      </SocialIcon>
+      <SocialIcon>
+        <FA.FaInstagram />
+      </SocialIcon>
+    </SocialContainer>
+  </StyledDashboardFooter>
+);

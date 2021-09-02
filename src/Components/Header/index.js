@@ -13,3 +13,7 @@ export const Header = ({ title, description, ...rest }) => {
     </StyledHeader>
   );
 };
+
+export const DashboardHeader = () => {
+  return <div>Dashboard Header</div>;
+};
