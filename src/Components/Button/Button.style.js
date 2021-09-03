@@ -45,3 +45,15 @@ export const StyledOutlineButton = styled(StyledButton)`
     border-color: transparent;
   }
 `;
+
+export const StyledIconButton = styled(StyledButton)`
+  color: ${({ theme }) => theme.text.default};
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  font-size: ${({ size }) => (size === "small" ? "18px" : "22px")};
+
+  &:hover {
+    color: ${({ theme }) => theme.text.primary};
+  }
+`;

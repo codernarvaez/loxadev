@@ -1,5 +1,6 @@
 import React from "react";
+import * as S from "./Sidebar.style";
 
 export const Sidebar = () => {
-  return <div>Sidebar</div>;
+  return <S.StyledSidebar>Sidebar</S.StyledSidebar>;
 };

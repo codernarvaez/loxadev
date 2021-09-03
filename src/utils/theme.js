@@ -19,6 +19,8 @@ export const lightTheme = {
     switch: "#FFFFFF",
     shadow: "#00000029",
     white: "#FFFFFF",
+    danger: "#f44336",
+    success: "#1DFC94",
   },
   text: {
     default: "#3F3F3F",

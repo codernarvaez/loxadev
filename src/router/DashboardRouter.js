@@ -6,15 +6,18 @@ import { dashboardRoutes } from "./routes";
 export const DashboardRouter = () => {
   return (
     <Switch>
-      {dashboardRoutes.map((route, key) => (
-        <Route
-          key={key}
-          path={route.path}
-          exact={route.exact}
-          name={route.name}
-          render={(props) => <route.component {...props} />}
-        />
-      ))}
+      {dashboardRoutes.map(
+        (route, key) =>
+          route.component && (
+            <Route
+              key={key}
+              path={route.path}
+              exact={route.exact}
+              name={route.name}
+              render={(props) => <route.component {...props} />}
+            />
+          )
+      )}
 
       <Redirect from="/panel" to="/panel/etiquetas" />
     </Switch>

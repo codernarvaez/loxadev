@@ -16,4 +16,5 @@ export const DashboardContent = styled.div`
 
 export const DashboardBody = styled.div`
   outline: 1px solid green;
+  margin: 25px 0 60px;
 `;
