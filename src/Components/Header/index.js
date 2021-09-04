@@ -37,3 +37,11 @@ const DashboardTitle = memo(() => {
     </S.DashboardTitle>
   );
 });
+
+export const CoverHeader = ({ coverImg, alt, ...rest }) => {
+  return (
+    <S.StyledCoverHeader {...rest}>
+      <img src={coverImg} alt={alt} />
+    </S.StyledCoverHeader>
+  );
+};

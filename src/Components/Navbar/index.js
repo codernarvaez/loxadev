@@ -37,7 +37,7 @@ export const Navbar = () => {
       <NavbarContainer>
         <Logo />
         <ButtonContainer>
-          <Button>¡Contáctanos!</Button>
+          <Button to="/contactanos">¡Contáctanos!</Button>
         </ButtonContainer>
         <NavItems />
       </NavbarContainer>

@@ -18,15 +18,16 @@ export const Content = styled.section`
 `;
 
 export const FormCard = styled(Card)`
+  box-sizing: border-box;
   padding: 28px 20px;
   display: flex;
   flex-direction: column;
   border-radius: 10px 10px 0 0;
 
   @media (min-width: ${SCREENS.md}) {
-    width: 60%;
+    width: 55%;
     justify-content: center;
-    padding: 1.75rem 2.5rem;
+    padding: 28px 40px;
     border-radius: 10px 0 0 10px;
   }
 
@@ -37,6 +38,7 @@ export const FormCard = styled(Card)`
 
 export const FormCardHeader = styled(FlexRow)`
   margin-bottom: 38px;
+  justify-content: space-between;
 `;
 
 export const FormCardTitle = styled(Bold)`
@@ -49,8 +51,9 @@ export const FormCardIcon = styled.span`
 `;
 
 export const InfoCard = styled(Card)`
+  box-sizing: border-box;
   background-color: ${({ theme }) => theme.bg.main};
-  padding: 1.75rem 1.25rem 2.5rem 1.25rem;
+  padding: 28px 20px 40px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -59,11 +62,12 @@ export const InfoCard = styled(Card)`
   border-radius: 0 0 10px 10px;
 
   @media (min-width: ${SCREENS.md}) {
-    width: 40%;
+    width: 45%;
     border-radius: 0 10px 10px 0;
   }
 
   @media (min-width: ${SCREENS.xl}) {
+    width: 40%;
     align-items: flex-start;
     padding: 1.75rem 2.5rem 2.5rem 2.5rem;
     gap: 44px;

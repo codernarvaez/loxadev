@@ -19,7 +19,9 @@ export const TopSection = () => {
               nonummy nibh euismod tincidunt ut laoreet.
             </S.Description>
 
-            <OutlineButton>Conoce todo sobre nosotros</OutlineButton>
+            <OutlineButton to="/nosotros">
+              Conoce todo sobre nosotros
+            </OutlineButton>
 
             <S.SocialContainer>
               <S.SocialIcon>

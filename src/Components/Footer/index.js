@@ -30,7 +30,7 @@ export const Footer = () => {
             </NavItem>
 
             <NavItem>
-              <NavItemLink to="#app">Nosotros</NavItemLink>
+              <NavItemLink to="/nosotros">Nosotros</NavItemLink>
             </NavItem>
 
             <NavItem>

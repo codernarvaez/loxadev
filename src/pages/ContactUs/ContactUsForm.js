@@ -1,20 +1,8 @@
 import React from "react";
-import {
-  Button,
-  Form,
-  FormInputWrapper,
-  Input,
-  Select,
-  TextArea,
-} from "components";
+import { Button, Form, FormInputWrapper, Input, TextArea } from "components";
 import { FormProvider, useForm } from "react-hook-form";
 import { useYupValidationResolver } from "hooks";
 import { contactUsSchema } from "utils/schemas";
-
-const options = [
-  { label: "Label", value: "Valor" },
-  { label: "Label1", value: "Valor1" },
-];
 
 export const ContactUsForm = () => {
   const resolver = useYupValidationResolver(contactUsSchema);
@@ -33,7 +21,6 @@ export const ContactUsForm = () => {
           <Input name="lastName" label="Apellido*" />
           <Input name="email" label="Correo Electrónico*" />
           <Input name="subject" label="Asunto*" />
-          <Select name="customSelect" options={options} />
         </FormInputWrapper>
 
         <TextArea name="message" label="¿En que te podemos ayudar?*" />

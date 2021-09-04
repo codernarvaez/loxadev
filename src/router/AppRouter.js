@@ -3,7 +3,7 @@ import { Router, Switch, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import { history } from "utils/history";
-import { Article, ContactUs, Dashboard, Home, Login } from "pages";
+import { AboutUs, Article, ContactUs, Dashboard, Home, Login } from "pages";
 import { PrivateRoute } from "router/PrivateRoute";
 import { PublicRoute } from "router/PublicRoute";
 
@@ -34,6 +34,13 @@ export const AppRouter = () => {
           path="/contactanos"
           loggedIn={loggedIn}
           component={ContactUs}
+        />
+
+        <PublicRoute
+          exact
+          path="/nosotros"
+          loggedIn={loggedIn}
+          component={AboutUs}
         />
 
         <PrivateRoute

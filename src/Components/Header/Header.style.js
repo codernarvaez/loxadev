@@ -39,3 +39,19 @@ export const DashboardTitle = styled(H1)`
   font-size: 24px;
   font-weight: 500;
 `;
+
+export const StyledCoverHeader = styled.header`
+  height: 250px;
+  width: 100%;
+  margin-top: 70px;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @media (min-width: ${SCREENS.md}) {
+    margin-top: 50px;
+  }
+`;

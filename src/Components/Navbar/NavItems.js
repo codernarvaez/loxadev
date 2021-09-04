@@ -24,7 +24,7 @@ export const NavItems = () => {
           </NavItem>
 
           <NavItem>
-            <NavItemLink to="#app" menu={"true"}>
+            <NavItemLink to="/nosotros" menu={"true"}>
               Nosotros
             </NavItemLink>
           </NavItem>

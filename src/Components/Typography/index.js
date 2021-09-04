@@ -109,3 +109,24 @@ export const Link = styled(RouterLink)`
     color: ${({ theme }) => theme.text.primary};
   }
 `;
+
+export const SectionTitle = styled(H2)`
+  font-size: 24px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.text.main};
+  text-align: center;
+
+  span {
+    color: ${({ theme }) => theme.text.primary};
+  }
+`;
+
+export const SectionLead = styled(Lead)`
+  text-align: center;
+  font-weight: 300;
+  font-size: 16px;
+  margin-top: 10px;
+  max-width: 700px;
+  margin-left: auto;
+  margin: auto;
+`;
