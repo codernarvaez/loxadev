@@ -15,3 +15,4 @@ export * from "./TextArea";
 export * from "./Select";
 export * from "./Sidebar";
 export * from "./List";
+export * from "./Pagination";

@@ -1,12 +1,15 @@
 import React from "react";
 import { DashboardFooter, DashboardHeader, Sidebar } from "components";
 import { DashboardRouter } from "router/DashboardRouter";
+import { navigation } from "pages/Dashboard/navigation";
+
 import * as S from "./Dashboard.style";
 
 export const Dashboard = () => {
   return (
-    <div>
-      <Sidebar />
+    <S.StyledDashboard>
+      <Sidebar navigation={navigation} />
+
       <S.DashboardContent>
         <DashboardHeader />
         <S.DashboardBody>
@@ -14,6 +17,6 @@ export const Dashboard = () => {
         </S.DashboardBody>
         <DashboardFooter />
       </S.DashboardContent>
-    </div>
+    </S.StyledDashboard>
   );
 };

@@ -21,6 +21,7 @@ export const lightTheme = {
     white: "#FFFFFF",
     danger: "#f44336",
     success: "#1DFC94",
+    info: "#CBD9EF",
   },
   text: {
     default: "#3F3F3F",

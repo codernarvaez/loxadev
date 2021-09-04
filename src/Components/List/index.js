@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./List.style";
-import { IconButton } from "components";
+import { IconButton, FilledIconButton } from "components";
 
 export const List = ({ children, ...rest }) => {
   return <S.StyledList {...rest}>{children}</S.StyledList>;
@@ -22,4 +22,19 @@ export const ItemActions = ({ actions = [], ...rest }) => {
   );
 };
 
+export const ListActions = ({ actions = [], ...rest }) => {
+  return (
+    <S.StyledListActions {...rest}>
+      {actions.map((action, key) => (
+        <FilledIconButton
+          key={key}
+          onClick={action.onClick}
+          title={action.title}
+        >
+          <action.icon />
+        </FilledIconButton>
+      ))}
+    </S.StyledListActions>
+  );
+};
 export * from "./TagItem";

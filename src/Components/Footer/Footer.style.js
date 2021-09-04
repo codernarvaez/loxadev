@@ -91,11 +91,11 @@ export const Copyright = styled(P)`
 `;
 
 export const StyledDashboardFooter = styled.footer`
-  outline: 1px solid blue;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
+  margin-top: auto;
 
   @media (min-width: ${SCREENS.md}) {
     flex-direction: row;

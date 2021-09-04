@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { ItemActions, Listitem } from "components";
 import * as S from "./TagItem.style";
 import { DangerBadge, SuccessBadge } from "components/Badge";
@@ -10,34 +10,33 @@ const actions = [
   { icon: Fa.FaTrash, title: "Eliminar", onClick: () => {} },
 ];
 
-export const TagItem = ({
-  name,
-  description,
-  status,
-  createdAt,
-  updatedAt,
-  ...rest
-}) => {
-  return (
-    <Listitem>
-      <S.StyledTagItem {...rest}>
-        <S.TagName>{name}</S.TagName>
+export const TagItem = memo(
+  ({ name, description, status, createdAt, updatedAt, ...rest }) => {
+    return (
+      <Listitem>
+        <S.StyledTagItem {...rest}>
+          <S.TagName>{name}</S.TagName>
 
-        <S.TagDescription>{description}</S.TagDescription>
+          <S.TagDescription>{description}</S.TagDescription>
 
-        <S.Timestams>
-          <S.CreatedAtDate>Creado el {createdAt}</S.CreatedAtDate>
-          <S.UpdatedAtDate>Modificado el {updatedAt}</S.UpdatedAtDate>
-        </S.Timestams>
+          <S.Timestamps>
+            <S.CreatedAtDate>
+              <span>Creado el</span> {createdAt}
+            </S.CreatedAtDate>
+            <S.UpdatedAtDate>
+              <span>Modificado el</span> {updatedAt}
+            </S.UpdatedAtDate>
+          </S.Timestamps>
 
-        {status ? (
-          <SuccessBadge>Activa</SuccessBadge>
-        ) : (
-          <DangerBadge>Inactiva</DangerBadge>
-        )}
+          {status ? (
+            <SuccessBadge>Activa</SuccessBadge>
+          ) : (
+            <DangerBadge>Inactiva</DangerBadge>
+          )}
 
-        <ItemActions actions={actions} />
-      </S.StyledTagItem>
-    </Listitem>
-  );
-};
+          <ItemActions actions={actions} />
+        </S.StyledTagItem>
+      </Listitem>
+    );
+  }
+);

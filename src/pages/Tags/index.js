@@ -1,47 +1,37 @@
-import React from "react";
-import { List, TagItem } from "components";
+import React, { useMemo, useState } from "react";
+import { List, ListActions, Pagination, TagItem } from "components";
+import tags from "./data.json";
+import * as Ai from "react-icons/ai";
+import * as Io from "react-icons/io";
 
-const tags = [
-  {
-    name: "Etiqueta",
-    description:
-      "Sint ea sint nulla ullamco culpa culpa aute exercitation ea. Consectetur ex Lorem Lorem aliquip minim.",
-    status: true,
-    createdAt: "21 de Abril de 2021, a las 12:56",
-    updatedAt: "21 de Abril de 2021, a las 12:56",
-  },
-  {
-    name: "Etiqueta",
-    description:
-      "Sint ea sint nulla ullamco culpa culpa aute exercitation ea. Consectetur ex Lorem Lorem aliquip minim.",
-    status: true,
-    createdAt: "21 de Abril de 2021, a las 12:56",
-    updatedAt: "21 de Abril de 2021, a las 12:56",
-  },
-  {
-    name: "Etiqueta",
-    description:
-      "Sint ea sint nulla ullamco culpa culpa aute exercitation ea. Consectetur ex Lorem Lorem aliquip minim.",
-    status: false,
-    createdAt: "21 de Abril de 2021, a las 12:56",
-    updatedAt: "21 de Abril de 2021, a las 12:56",
-  },
-  {
-    name: "Etiqueta",
-    description:
-      "Sint ea sint nulla ullamco culpa culpa aute exercitation ea. Consectetur ex Lorem Lorem aliquip minim.",
-    status: true,
-    createdAt: "21 de Abril de 2021, a las 12:56",
-    updatedAt: "21 de Abril de 2021, a las 12:56",
-  },
+let PageSize = 10;
+
+const actions = [
+  { icon: Ai.AiOutlineSearch, title: "Buscar", onClick: () => {} },
+  { icon: Io.IoMdAdd, title: "Añadir", onClick: () => {} },
 ];
 
 export const Tags = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const currentTableData = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * PageSize;
+    const lastPageIndex = firstPageIndex + PageSize;
+    return tags.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage]);
+
   return (
     <List>
-      {tags.map((tag, key) => (
+      <ListActions actions={actions} />
+      {currentTableData.map((tag, key) => (
         <TagItem key={key} {...tag} />
       ))}
+      <Pagination
+        currentPage={currentPage}
+        totalCount={tags.length}
+        pageSize={PageSize}
+        onPageChange={(page) => setCurrentPage(page)}
+      />
     </List>
   );
 };

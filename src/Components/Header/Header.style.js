@@ -33,9 +33,7 @@ export const Description = styled(Lead)`
   }
 `;
 
-export const StyledDashboardHeader = styled.header`
-  outline: 1px solid orange;
-`;
+export const StyledDashboardHeader = styled.header``;
 
 export const DashboardTitle = styled(H1)`
   font-size: 24px;

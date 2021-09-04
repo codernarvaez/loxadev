@@ -47,6 +47,8 @@ export const StyledOutlineButton = styled(StyledButton)`
 `;
 
 export const StyledIconButton = styled(StyledButton)`
+  display: flex;
+  align-items: center;
   color: ${({ theme }) => theme.text.default};
   background-color: transparent;
   border: 0;
@@ -55,5 +57,17 @@ export const StyledIconButton = styled(StyledButton)`
 
   &:hover {
     color: ${({ theme }) => theme.text.primary};
+  }
+`;
+
+export const StyledFilledIconButton = styled(StyledIconButton)`
+  padding: 6px;
+  background-color: ${({ theme }) => theme.bg.white};
+  color: ${({ theme }) => theme.text.secondary};
+  box-shadow: 0px 3px 5px ${({ theme }) => theme.bg.shadow};
+
+  &:hover {
+    color: ${({ theme }) => theme.text.default};
+    background-color: ${({ theme }) => theme.bg.icon};
   }
 `;
