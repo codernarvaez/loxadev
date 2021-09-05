@@ -4,6 +4,7 @@ import { SCREENS } from "utils/constants";
 
 export const TopSectionContainer = styled.div`
   position: relative;
+  margin-bottom: 60px;
 `;
 
 export const Hero = styled(FlexCol)`
@@ -64,23 +65,6 @@ export const SocialContainer = styled(FlexRow)`
 
   @media (min-width: ${SCREENS.xl}) {
     margin-top: 96px;
-  }
-`;
-
-export const SocialIcon = styled.span`
-  width: 25px;
-  height: 25px;
-  background-color: ${({ theme }) => theme.bg.secondary};
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 200ms ease-in-out;
-  color: ${({ theme }) => theme.text.bg};
-
-  &:hover {
-    background-color: ${({ theme }) => theme.bg.main};
   }
 `;
 

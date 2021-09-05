@@ -4,3 +4,4 @@ export { ContactUs } from "./ContactUs";
 export { Login } from "./Login";
 export { Dashboard } from "./Dashboard";
 export { AboutUs } from "./AboutUs";
+export { OurServices } from "./OurServices";

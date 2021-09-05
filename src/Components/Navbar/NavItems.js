@@ -18,7 +18,7 @@ export const NavItems = () => {
       <Menu right styles={menuStyles}>
         <ListContainer>
           <NavItem>
-            <NavItemLink to="#app" menu={"true"}>
+            <NavItemLink to="/blog" menu={"true"}>
               Blog
             </NavItemLink>
           </NavItem>
@@ -30,13 +30,13 @@ export const NavItems = () => {
           </NavItem>
 
           <NavItem>
-            <NavItemLink to="#app" menu={"true"}>
+            <NavItemLink to="/servicios" menu={"true"}>
               Servicios
             </NavItemLink>
           </NavItem>
 
           <NavItem>
-            <NavItemLink to="#app" menu={"true"}>
+            <NavItemLink to="/productos" menu={"true"}>
               Productos
             </NavItemLink>
           </NavItem>
@@ -47,19 +47,19 @@ export const NavItems = () => {
   return (
     <ListContainer>
       <NavItem>
-        <NavItemLink to="#app">Blog</NavItemLink>
+        <NavItemLink to="/blog">Blog</NavItemLink>
       </NavItem>
 
       <NavItem>
-        <NavItemLink to="#app">Nosotros</NavItemLink>
+        <NavItemLink to="/nosotros">Nosotros</NavItemLink>
       </NavItem>
 
       <NavItem>
-        <NavItemLink to="#app">Servicios</NavItemLink>
+        <NavItemLink to="/servicios">Servicios</NavItemLink>
       </NavItem>
 
       <NavItem>
-        <NavItemLink to="#app">Productos</NavItemLink>
+        <NavItemLink to="/productos">Productos</NavItemLink>
       </NavItem>
     </ListContainer>
   );

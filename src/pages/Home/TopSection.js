@@ -1,7 +1,7 @@
 import React from "react";
 import * as Fa from "react-icons/fa";
 import * as S from "./Home.style";
-import { OutlineButton, Wrapper } from "components";
+import { OutlineButton, SocialIconFilled, Wrapper } from "components";
 import TeamImage from "assets/images/team.png";
 
 export const TopSection = () => {
@@ -19,20 +19,35 @@ export const TopSection = () => {
               nonummy nibh euismod tincidunt ut laoreet.
             </S.Description>
 
-            <OutlineButton to="/nosotros">
+            <OutlineButton to="/nosotros" block>
               Conoce todo sobre nosotros
             </OutlineButton>
 
             <S.SocialContainer>
-              <S.SocialIcon>
+              <SocialIconFilled
+                href="https://www.facebook.com/LoxaDev"
+                target="_blank"
+              >
                 <Fa.FaFacebookF />
-              </S.SocialIcon>
-              <S.SocialIcon>
+              </SocialIconFilled>
+
+              <SocialIconFilled
+                href="https://twitter.com/LoxaDev"
+                target="_blank"
+              >
                 <Fa.FaTwitter />
-              </S.SocialIcon>
-              <S.SocialIcon>
+              </SocialIconFilled>
+
+              <SocialIconFilled
+                href="https://www.instagram.com/loxadev"
+                target="_blank"
+              >
                 <Fa.FaInstagram />
-              </S.SocialIcon>
+              </SocialIconFilled>
+
+              <SocialIconFilled href="https://t.me/LoxaDev" target="_blank">
+                <Fa.FaTelegramPlane />
+              </SocialIconFilled>
             </S.SocialContainer>
           </S.Content>
 

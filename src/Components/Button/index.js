@@ -2,6 +2,7 @@ import React from "react";
 import {
   A,
   StyledButton,
+  StyledFilledButton,
   StyledLink,
   StyledOutlineButton,
   StyledIconButton,
@@ -31,6 +32,9 @@ const handleLinkWrapping = (Component, props) => {
 };
 
 export const Button = (props) => handleLinkWrapping(StyledButton, props);
+
+export const FilledButton = (props) =>
+  handleLinkWrapping(StyledFilledButton, props);
 
 export const OutlineButton = (props) =>
   handleLinkWrapping(StyledOutlineButton, props);

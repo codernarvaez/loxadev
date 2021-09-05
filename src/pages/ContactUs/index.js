@@ -34,33 +34,45 @@ export const ContactUs = () => {
                 <S.InfoCardIcon>
                   <Fa.FaPhone />
                 </S.InfoCardIcon>
-                <S.InfoCardItemText>(+593) 072713879</S.InfoCardItemText>
+                <S.InfoCardItemText>(+593) 098 917 5786</S.InfoCardItemText>
               </S.InfoCardItem>
               <S.InfoCardItem>
                 <S.InfoCardIcon>
                   <Fa.FaEnvelope />
                 </S.InfoCardIcon>
-                <S.InfoCardItemText>loxadev@contacto.com</S.InfoCardItemText>
+                <S.InfoCardItemText>info@loxadev.com</S.InfoCardItemText>
               </S.InfoCardItem>
               <S.InfoCardItem>
                 <S.InfoCardIcon>
                   <Fa.FaMapMarkedAlt />
                 </S.InfoCardIcon>
                 <S.InfoCardItemText>
-                  Avenida Principal 200-14 <small>Calle Secundaria</small>
+                  Loja, Loja <small>Ecuador</small>
                 </S.InfoCardItemText>
               </S.InfoCardItem>
             </S.InfoCardDetails>
 
             <S.Social>
-              <SocialIcon>
+              <SocialIcon
+                href="https://www.facebook.com/LoxaDev"
+                target="_blank"
+              >
                 <Fa.FaFacebookF />
               </SocialIcon>
-              <SocialIcon>
+
+              <SocialIcon href="https://twitter.com/LoxaDev" target="_blank">
                 <Fa.FaTwitter />
               </SocialIcon>
-              <SocialIcon>
+
+              <SocialIcon
+                href="https://www.instagram.com/loxadev"
+                target="_blank"
+              >
                 <Fa.FaInstagram />
+              </SocialIcon>
+
+              <SocialIcon href="https://t.me/LoxaDev" target="_blank">
+                <Fa.FaTelegramPlane />
               </SocialIcon>
             </S.Social>
           </S.InfoCard>

@@ -1,8 +1,6 @@
 import React from "react";
 import * as FA from "react-icons/fa";
-
-import { Wrapper } from "components/Wrapper";
-import LogoWhite from "assets/images/logo-white.svg";
+import { SocialIconAlt, Link, Wrapper } from "components";
 import {
   Content,
   Copyright,
@@ -10,14 +8,13 @@ import {
   NavItem,
   NavItemLink,
   SocialContainer,
-  SocialIcon,
   StyledFooter,
   Logo,
   StyledDashboardFooter,
   DashboardCopyright,
 } from "components/Footer/Footer.style";
 
-import { Link } from "components/Typography";
+import LogoWhite from "assets/images/logo-white.svg";
 
 export const Footer = () => {
   return (
@@ -26,7 +23,7 @@ export const Footer = () => {
         <Content>
           <Nav>
             <NavItem>
-              <NavItemLink to="#app">Blog</NavItemLink>
+              <NavItemLink to="/blog">Blog</NavItemLink>
             </NavItem>
 
             <NavItem>
@@ -34,24 +31,46 @@ export const Footer = () => {
             </NavItem>
 
             <NavItem>
-              <NavItemLink to="#app">Servicios</NavItemLink>
+              <NavItemLink to="/servicios">Servicios</NavItemLink>
             </NavItem>
 
             <NavItem>
-              <NavItemLink to="#app">Productos</NavItemLink>
+              <NavItemLink to="/productos">Productos</NavItemLink>
             </NavItem>
           </Nav>
 
           <SocialContainer>
-            <SocialIcon>
+            <SocialIconAlt
+              color="bg"
+              href="https://www.facebook.com/LoxaDev"
+              target="_blank"
+            >
               <FA.FaFacebookF />
-            </SocialIcon>
-            <SocialIcon>
+            </SocialIconAlt>
+
+            <SocialIconAlt
+              color="bg"
+              href="https://twitter.com/LoxaDev"
+              target="_blank"
+            >
               <FA.FaTwitter />
-            </SocialIcon>
-            <SocialIcon>
+            </SocialIconAlt>
+
+            <SocialIconAlt
+              color="bg"
+              href="https://www.instagram.com/loxadev"
+              target="_blank"
+            >
               <FA.FaInstagram />
-            </SocialIcon>
+            </SocialIconAlt>
+
+            <SocialIconAlt
+              color="bg"
+              href="https://t.me/LoxaDev"
+              target="_blank"
+            >
+              <FA.FaTelegramPlane />
+            </SocialIconAlt>
           </SocialContainer>
 
           <Logo>
@@ -74,15 +93,17 @@ export const DashboardFooter = () => (
     </DashboardCopyright>
 
     <SocialContainer>
-      <SocialIcon>
+      <SocialIconAlt href="https://www.facebook.com/LoxaDev" target="_blank">
         <FA.FaFacebookF />
-      </SocialIcon>
-      <SocialIcon>
+      </SocialIconAlt>
+
+      <SocialIconAlt href="https://twitter.com/LoxaDev" target="_blank">
         <FA.FaTwitter />
-      </SocialIcon>
-      <SocialIcon>
+      </SocialIconAlt>
+
+      <SocialIconAlt href="https://www.instagram.com/loxadev" target="_blank">
         <FA.FaInstagram />
-      </SocialIcon>
+      </SocialIconAlt>
     </SocialContainer>
   </StyledDashboardFooter>
 );

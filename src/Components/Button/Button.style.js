@@ -5,12 +5,14 @@ export const A = styled.a`
   display: flex;
   align-items: center;
   flex: none;
+  text-decoration: none;
 `;
 
 export const StyledLink = styled(Link)`
   display: flex;
   flex: none;
   align-items: center;
+  text-decoration: none;
 `;
 
 export const StyledButton = styled.button`
@@ -31,6 +33,14 @@ export const StyledButton = styled.button`
     background: transparent;
     color: ${({ theme }) => theme.text.primary};
     border-color: ${({ theme }) => theme.text.primary};
+  }
+`;
+
+export const StyledFilledButton = styled(StyledButton)`
+  &:hover {
+    background: ${({ theme }) => theme.bg.white};
+    color: ${({ theme }) => theme.text.default};
+    border-color: ${({ theme }) => theme.text.default};
   }
 `;
 

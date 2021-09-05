@@ -56,18 +56,11 @@ export const SocialContainer = styled.div`
   }
 `;
 
-export const SocialIcon = styled.span`
-  cursor: pointer;
-  transition: color 300ms ease-in-out;
-  &:hover {
-    color: ${({ theme }) => theme.text.icon};
-  }
-`;
-
 export const Logo = styled.div`
   height: 50px;
   justify-self: center;
   width: auto;
+  user-select: none;
 
   img {
     width: 100%;
