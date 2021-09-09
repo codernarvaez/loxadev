@@ -5,3 +5,5 @@ export { Login } from "./Login";
 export { Dashboard } from "./Dashboard";
 export { AboutUs } from "./AboutUs";
 export { OurServices } from "./OurServices";
+export { OurProducts } from "./OurProducts";
+export { Blog } from "./Blog";

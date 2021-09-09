@@ -19,7 +19,7 @@ export const OurServices = () => {
       <Navbar />
       <CoverHeader
         coverImg={OurServicesCoverImg}
-        alt="Sobre Nosotros"
+        alt="Nuestros Servicios"
         title="Servicios"
         lead="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod."
         buttonText="Nuestros Productos"

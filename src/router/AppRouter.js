@@ -6,10 +6,12 @@ import { history } from "utils/history";
 import {
   AboutUs,
   Article,
+  Blog,
   ContactUs,
   Dashboard,
   Home,
   Login,
+  OurProducts,
   OurServices,
 } from "pages";
 import { PrivateRoute } from "router/PrivateRoute";
@@ -29,6 +31,8 @@ export const AppRouter = () => {
           loggedIn={loggedIn}
           component={Login}
         />
+
+        <PublicRoute exact path="/blog" loggedIn={loggedIn} component={Blog} />
 
         <PublicRoute
           exact
@@ -56,6 +60,13 @@ export const AppRouter = () => {
           path="/servicios"
           loggedIn={loggedIn}
           component={OurServices}
+        />
+
+        <PublicRoute
+          exact
+          path="/productos"
+          loggedIn={loggedIn}
+          component={OurProducts}
         />
 
         <PrivateRoute

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import {
   A,
   StyledButton,
@@ -7,6 +7,7 @@ import {
   StyledOutlineButton,
   StyledIconButton,
   StyledFilledIconButton,
+  StyledIconTextButton,
 } from "./Button.style";
 
 const handleLinkWrapping = (Component, props) => {
@@ -44,3 +45,13 @@ export const IconButton = (props) =>
 
 export const FilledIconButton = (props) =>
   handleLinkWrapping(StyledFilledIconButton, props);
+
+export const IconTextButton = (props) => {
+  const children = (
+    <Fragment>
+      <props.icon />
+      {props.children}
+    </Fragment>
+  );
+  return handleLinkWrapping(StyledIconTextButton, { ...props, children });
+};

@@ -81,3 +81,10 @@ export const StyledFilledIconButton = styled(StyledIconButton)`
     background-color: ${({ theme }) => theme.bg.icon};
   }
 `;
+
+export const StyledIconTextButton = styled(StyledButton)`
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+`;

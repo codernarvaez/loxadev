@@ -63,6 +63,7 @@ export const CoverHeaderContent = styled(Wrapper)`
   position: absolute;
   left: 0;
   top: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
