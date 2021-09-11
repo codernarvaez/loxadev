@@ -19,7 +19,7 @@ export const DashboardRouter = () => {
           )
       )}
 
-      <Redirect from="/panel" to="/panel/etiquetas" />
+      <Redirect from="/panel" to="/panel/articulos" />
     </Switch>
   );
 };

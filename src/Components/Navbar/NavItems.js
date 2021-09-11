@@ -40,6 +40,12 @@ export const NavItems = () => {
               Productos
             </NavItemLink>
           </NavItem>
+
+          <NavItem>
+            <NavItemLink to="/contactanos" menu={"true"}>
+              Contáctanos
+            </NavItemLink>
+          </NavItem>
         </ListContainer>
       </Menu>
     );

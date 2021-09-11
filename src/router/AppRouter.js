@@ -36,7 +36,7 @@ export const AppRouter = () => {
 
         <PublicRoute
           exact
-          path="/articulo"
+          path="/articulo/:id"
           loggedIn={loggedIn}
           component={Article}
         />

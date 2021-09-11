@@ -37,6 +37,10 @@ export const Footer = () => {
             <NavItem>
               <NavItemLink to="/productos">Productos</NavItemLink>
             </NavItem>
+
+            <NavItem>
+              <NavItemLink to="/contactanos">Contáctanos</NavItemLink>
+            </NavItem>
           </Nav>
 
           <SocialContainer>
@@ -103,6 +107,10 @@ export const DashboardFooter = () => (
 
       <SocialIconAlt href="https://www.instagram.com/loxadev" target="_blank">
         <FA.FaInstagram />
+      </SocialIconAlt>
+
+      <SocialIconAlt href="https://t.me/LoxaDev" target="_blank">
+        <FA.FaTelegramPlane />
       </SocialIconAlt>
     </SocialContainer>
   </StyledDashboardFooter>
