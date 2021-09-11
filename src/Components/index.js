@@ -16,3 +16,4 @@ export * from "./Select";
 export * from "./Sidebar";
 export * from "./List";
 export * from "./Pagination";
+export * from "./Carousel";

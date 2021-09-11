@@ -89,7 +89,7 @@ export const TeamSection = styled.section`
 export const TeamCards = styled.div`
   max-width: 936px;
   margin: 0 auto;
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
 
@@ -101,5 +101,5 @@ export const TeamCards = styled.div`
 
   @media (min-width: ${SCREENS.xl}) {
     grid-template-columns: 1fr 1fr 1fr;
-  }
+  } */
 `;

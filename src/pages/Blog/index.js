@@ -1,15 +1,11 @@
 import React, { Fragment } from "react";
-import {
-  ArticleCard,
-  CoverHeader,
-  Footer,
-  LatestArticleCard,
-  Navbar,
-} from "components";
+import { CoverHeader, Footer, Navbar } from "components";
+import { PopularArticles } from "pages/Blog/PopularArticles";
+import { LatestArticles } from "pages/Blog/LatestArticles";
+import { MainTags } from "pages/Blog/MainTags";
 import * as S from "./Blog.style";
 
 import BlogCoverImg from "assets/images/team.jpg";
-import { articles, latestArticles } from "pages/Blog/articles";
 
 export const Blog = () => {
   return (
@@ -25,38 +21,9 @@ export const Blog = () => {
       />
 
       <S.StyledBlog>
-        <S.PopularArticlesSection>
-          <S.SectionBlogTitle>Artículos Populares</S.SectionBlogTitle>
-
-          <S.PopularArticleCards>
-            {articles.map((article, key) => (
-              <ArticleCard key={key} {...article} />
-            ))}
-          </S.PopularArticleCards>
-        </S.PopularArticlesSection>
-
-        <S.LatestArticlesSection>
-          <S.SectionBlogTitle>Artículos Recientes</S.SectionBlogTitle>
-
-          <S.LatestArticleCards>
-            {latestArticles.map((latestArticle, key) => (
-              <LatestArticleCard key={key} {...latestArticle} />
-            ))}
-          </S.LatestArticleCards>
-        </S.LatestArticlesSection>
-
-        <S.MainTagsSection>
-          <S.SectionBlogTitle>Principales Etiquetas</S.SectionBlogTitle>
-
-          <S.MainTags>
-            <S.MainTag to="#">Inteligencia Artificial</S.MainTag>
-            <S.MainTag to="#">ReactJS</S.MainTag>
-            <S.MainTag to="#">Design</S.MainTag>
-            <S.MainTag to="#">ML</S.MainTag>
-            <S.MainTag to="#">ReactJS</S.MainTag>
-            <S.MainTag to="#">Javascript</S.MainTag>
-          </S.MainTags>
-        </S.MainTagsSection>
+        <PopularArticles />
+        <LatestArticles />
+        <MainTags />
       </S.StyledBlog>
 
       <Footer />

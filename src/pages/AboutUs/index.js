@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import {
+  Carousel,
   CoverHeader,
   FeatureCard,
   Footer,
@@ -11,10 +12,10 @@ import {
 } from "components";
 import AboutUsCoverImg from "assets/images/team.jpg";
 import TeamImg from "assets/images/team.png";
-import TeamMemberImg from "assets/images/member_1.jpg";
 import * as S from "./AboutUs.style";
 import * as Gi from "react-icons/gi";
 import * as Go from "react-icons/go";
+import { members } from "pages/AboutUs/members";
 
 export const AboutUs = () => {
   return (
@@ -81,21 +82,11 @@ export const AboutUs = () => {
           </SectionLead>
 
           <S.TeamCards>
-            <TeamCard
-              image={TeamMemberImg}
-              name="Mellisa Andersson"
-              occupation="Desarrolladora de Software"
-            />
-            <TeamCard
-              image={TeamMemberImg}
-              name="Mellisa Andersson"
-              occupation="Desarrolladora de Software"
-            />
-            <TeamCard
-              image={TeamMemberImg}
-              name="Mellisa Andersson"
-              occupation="Desarrolladora de Software"
-            />
+            <Carousel>
+              {members.map((member, key) => (
+                <TeamCard key={key} {...member} />
+              ))}
+            </Carousel>
           </S.TeamCards>
         </Wrapper>
       </S.TeamSection>

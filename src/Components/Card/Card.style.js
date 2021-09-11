@@ -41,6 +41,7 @@ export const StyledTeamCard = styled(StyledFeatureCard)`
   background-color: ${({ theme }) => theme.bg.default};
   padding: 0px;
   margin-top: 30px;
+  user-select: none;
 `;
 
 export const TeamCardImage = styled.div`
