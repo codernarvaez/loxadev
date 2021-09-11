@@ -1,0 +1,79 @@
+import styled from "styled-components";
+import { SCREENS } from "utils/constants";
+
+export const StyledPagination = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+
+  @media (min-width: ${SCREENS.md}) {
+    justify-content: flex-end;
+  }
+`;
+
+export const Arrow = styled.div`
+  &::before {
+    position: relative;
+    /* top: 3pt; Uncomment this to lower the icons as requested in comments*/
+    content: "";
+    /* By using an em scale, the arrows will size with the font */
+    display: inline-block;
+    width: 0.4em;
+    height: 0.4em;
+    border-right: 0.12em solid rgba(0, 0, 0, 0.87);
+    border-top: 0.12em solid rgba(0, 0, 0, 0.87);
+  }
+`;
+
+export const PaginationItem = styled.li`
+  padding: 0 12px;
+  height: 32px;
+  text-align: center;
+  margin: auto 4px;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  letter-spacing: 0.01071em;
+  border-radius: 16px;
+  line-height: 1.43;
+  font-size: 13px;
+  min-width: 32px;
+  pointer-events: ${({ disabled }) => (disabled ? "none" : "initial")};
+  background-color: ${({ selected }) => selected && "rgba(0, 0, 0, 0.08)"};
+
+  &.dots:hover {
+    background-color: transparent;
+    cursor: default;
+  }
+
+  &:hover {
+    background-color: ${({ disabled }) =>
+      disabled ? "transparent" : "rgba(0, 0, 0, 0.04)"};
+    cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
+  }
+
+  ${Arrow} {
+    &::before {
+      border-right: ${({ disabled }) =>
+        disabled && "0.12em solid rgba(0, 0, 0, 0.43)"};
+      border-top: ${({ disabled }) =>
+        disabled && "0.12em solid rgba(0, 0, 0, 0.43)"};
+    }
+  }
+
+  @media (min-width: ${SCREENS.md}) {
+    font-size: 16px;
+  }
+`;
+
+export const ArrowLeft = styled(Arrow)`
+  transform: rotate(-135deg) translate(-50%);
+`;
+
+export const ArrowRight = styled(Arrow)`
+  transform: rotate(45deg);
+`;
