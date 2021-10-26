@@ -11,8 +11,7 @@ export const ContactUs = () => {
       <Wrapper>
         <Header
           title="Contáctanos"
-          description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et."
+          description="Pregunta por nuestros servicios y productos o solicita el tuyo personalizado."
         />
 
         <S.Content>

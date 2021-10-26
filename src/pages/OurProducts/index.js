@@ -21,7 +21,7 @@ export const OurProducts = () => {
         coverImg={OurProductsCoverImg}
         alt="Nuestros Productos"
         title="Productos"
-        lead="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod."
+        lead="Conoce los productos que te ofrece LoxaDev"
         buttonText="Nuestros Servicios"
         buttonProps={{ to: "/servicios", size: "small" }}
       />
@@ -30,9 +30,9 @@ export const OurProducts = () => {
         <Wrapper>
           <SectionTitle>Nuestros Productos</SectionTitle>
           <SectionLead>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua.
+            Ofrecemos productos pre-establecidos, Los cuales los puedes conocer
+            a continuación Además, ofrecemos servicios personalizados que
+            respondan a tus necesidades, contáctanos para sabes más de esto
           </SectionLead>
 
           <S.ProductCards>

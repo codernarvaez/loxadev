@@ -1,26 +1,25 @@
 import * as Fa from "react-icons/fa";
-import * as Md from "react-icons/md";
 import * as Fi from "react-icons/fi";
 
 export const services = [
   {
-    icon: Fa.FaFileInvoice,
-    title: "Service One",
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
-  },
-  {
-    icon: Md.MdPayment,
-    title: "Service Two",
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
+    icon: Fi.FiBox,
+    title: "Entregas",
+    text: "Entrega de productos de empresas a empresas y de empresas a clientes",
   },
   {
     icon: Fa.FaMotorcycle,
-    title: "Service Three",
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
+    title: "Mandados",
+    text: "Mandados y encomiendas a cualquier hora del día y con el menor tiempo de espera posible",
   },
   {
-    icon: Fi.FiPhoneCall,
-    title: "Service Four",
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
+    icon: Fa.FaTruck,
+    title: "Mudanzas",
+    text: "Transporte de muembles y equipaje dentro y fuera de la ciudad, así como de mercadería pesada",
+  },
+  {
+    icon: Fa.FaRoute,
+    title: "Distribución",
+    text: "Distribución de mercaderías dentro y fuera de la ciudad",
   },
 ];
