@@ -11,12 +11,12 @@ export const TopSection = () => {
         <S.Hero>
           <S.Content>
             <S.Title>
-              Lorem ipsum dolor sit amet <span>consectetuer</span>
+              Te ofrecemos Soluciones <span>que Evolucionan</span>
             </S.Title>
 
             <S.Description>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod tincidunt ut laoreet.
+              Soluciones tecnológicas a medida y adaptables a las necesidades de
+              la comunidad mundial, cerca de ti.
             </S.Description>
 
             <OutlineButton to="/nosotros" block>

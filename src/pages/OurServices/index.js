@@ -21,7 +21,7 @@ export const OurServices = () => {
         coverImg={OurServicesCoverImg}
         alt="Nuestros Servicios"
         title="Servicios"
-        lead="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod."
+        lead="Nuestros servicios a tu disposición cuando los requieras."
         buttonText="Nuestros Productos"
         buttonProps={{ to: "/productos", size: "small" }}
       />
@@ -30,9 +30,8 @@ export const OurServices = () => {
         <Wrapper>
           <SectionTitle>Nuestros Servicios</SectionTitle>
           <SectionLead>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua.
+            Te ofrecemos servicio de calidad y calidez ajustados y adaptados
+            para responder a tus necesidades
           </SectionLead>
 
           <S.ServicesCards>
