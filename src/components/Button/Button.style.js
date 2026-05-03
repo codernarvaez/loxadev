@@ -15,7 +15,9 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button.withConfig({
+  shouldForwardProp: (prop) => !['size', 'block'].includes(prop),
+})`
   border-radius: 10px;
   font-size: ${({ size }) => (size === "small" ? "14px" : "16px")};
   padding: ${({ size }) => (size === "small" ? "10px 16px" : "14px 20px")};

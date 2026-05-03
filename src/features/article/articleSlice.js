@@ -80,7 +80,7 @@ const articleSlice = createSlice({
     });
     builder.addCase(saveArticle.fulfilled, (state, action) => {
       state.saving = false;
-      state.entities.shift(action.payload.newArticle);
+      state.entities.unshift(action.payload.newArticle);
     });
     builder.addCase(saveArticle.rejected, (state, action) => {
       state.saving = false;
@@ -109,7 +109,7 @@ const articleSlice = createSlice({
     });
     builder.addCase(deleteArticle.fulfilled, (state, action) => {
       state.deleting = false;
-      state.entities.filter(
+      state.entities = state.entities.filter(
         (obj) => obj._id !== action.payload.deletedArticle._id
       );
     });

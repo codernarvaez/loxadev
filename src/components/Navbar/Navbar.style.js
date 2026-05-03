@@ -15,7 +15,9 @@ export const NavItem = styled.li`
   cursor: pointer;
 `;
 
-export const NavItemLink = styled(Link)`
+export const NavItemLink = styled(Link).withConfig({
+  shouldForwardProp: (prop) => !['menu'].includes(prop),
+})`
   font-weight: 500;
 
   ${({ menu }) =>
@@ -43,7 +45,9 @@ export const StyledSidebarNav = styled.nav`
   height: 100%;
 `;
 
-export const StyledNavItem = styled(Link)`
+export const StyledNavItem = styled(Link).withConfig({
+  shouldForwardProp: (prop) => !['active'].includes(prop),
+})`
   transition: all 0.2s ease-in-out;
   display: flex;
   align-items: center;

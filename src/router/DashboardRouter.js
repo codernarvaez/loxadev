@@ -1,25 +1,23 @@
 import React from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import { dashboardRoutes } from "./routes";
 
 export const DashboardRouter = () => {
   return (
-    <Switch>
+    <Routes>
       {dashboardRoutes.map(
         (route, key) =>
           route.component && (
             <Route
               key={key}
               path={route.path}
-              exact={route.exact}
-              name={route.name}
-              render={(props) => <route.component {...props} />}
+              element={<route.component />}
             />
           )
       )}
 
-      <Redirect from="/panel" to="/panel/articulos" />
-    </Switch>
+      <Route path="/" element={<Navigate to="articulos" replace />} />
+    </Routes>
   );
 };

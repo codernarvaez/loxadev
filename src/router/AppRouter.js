@@ -1,8 +1,7 @@
 import React from "react";
-import { Router, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { history } from "utils/history";
 import {
   AboutUs,
   Article,
@@ -21,62 +20,91 @@ export const AppRouter = () => {
   const { loggedIn } = useSelector((state) => state.auth);
 
   return (
-    <Router history={history}>
-      <Switch>
-        <PublicRoute exact path="/" loggedIn={loggedIn} component={Home} />
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <PublicRoute loggedIn={loggedIn}>
+              <Home />
+            </PublicRoute>
+          }
+        />
 
-        <PublicRoute
-          exact
+        <Route
           path="/ingresar"
-          loggedIn={loggedIn}
-          component={Login}
+          element={
+            <PublicRoute loggedIn={loggedIn}>
+              <Login />
+            </PublicRoute>
+          }
         />
 
-        <PublicRoute exact path="/blog" loggedIn={loggedIn} component={Blog} />
+        <Route
+          path="/blog"
+          element={
+            <PublicRoute loggedIn={loggedIn}>
+              <Blog />
+            </PublicRoute>
+          }
+        />
 
-        <PublicRoute
-          exact
+        <Route
           path="/articulo/:id"
-          loggedIn={loggedIn}
-          component={Article}
+          element={
+            <PublicRoute loggedIn={loggedIn}>
+              <Article />
+            </PublicRoute>
+          }
         />
 
-        <PublicRoute
-          exact
+        <Route
           path="/contactanos"
-          loggedIn={loggedIn}
-          component={ContactUs}
+          element={
+            <PublicRoute loggedIn={loggedIn}>
+              <ContactUs />
+            </PublicRoute>
+          }
         />
 
-        <PublicRoute
-          exact
+        <Route
           path="/nosotros"
-          loggedIn={loggedIn}
-          component={AboutUs}
+          element={
+            <PublicRoute loggedIn={loggedIn}>
+              <AboutUs />
+            </PublicRoute>
+          }
         />
 
-        <PublicRoute
-          exact
+        <Route
           path="/servicios"
-          loggedIn={loggedIn}
-          component={OurServices}
+          element={
+            <PublicRoute loggedIn={loggedIn}>
+              <OurServices />
+            </PublicRoute>
+          }
         />
 
-        <PublicRoute
-          exact
+        <Route
           path="/productos"
-          loggedIn={loggedIn}
-          component={OurProducts}
+          element={
+            <PublicRoute loggedIn={loggedIn}>
+              <OurProducts />
+            </PublicRoute>
+          }
         />
 
-        <PrivateRoute
-          path="/panel"
-          loggedIn={!loggedIn}
-          component={Dashboard}
+        <Route
+          path="/panel/*"
+          element={
+            <PrivateRoute loggedIn={loggedIn}>
+              <Dashboard />
+            </PrivateRoute>
+          }
         />
 
-        <Redirect to="/" />
-      </Switch>
-    </Router>
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 };

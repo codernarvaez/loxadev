@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import Select from "react-select";
 
-export const StyledSelect = styled(Select)`
+export const StyledSelect = styled(Select).withConfig({
+  shouldForwardProp: (prop) => !['invalid'].includes(prop),
+})`
   font-size: 0.75rem;
 
   .react-select__control {

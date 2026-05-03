@@ -71,7 +71,7 @@ const tagSlice = createSlice({
     });
     builder.addCase(saveTag.fulfilled, (state, action) => {
       state.saving = false;
-      state.entities.shift(action.payload.newTag);
+      state.entities.unshift(action.payload.newTag);
     });
     builder.addCase(saveTag.rejected, (state, action) => {
       state.saving = false;
@@ -100,7 +100,7 @@ const tagSlice = createSlice({
     });
     builder.addCase(deleteTag.fulfilled, (state, action) => {
       state.deleting = false;
-      state.entities.filter((obj) => obj._id !== action.payload.deletedTag._id);
+      state.entities = state.entities.filter((obj) => obj._id !== action.payload.deletedTag._id);
     });
     builder.addCase(deleteTag.rejected, (state, action) => {
       state.deleting = false;
