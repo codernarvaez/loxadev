@@ -5,6 +5,14 @@
 # debe generarse con la misma major de npm (p. ej. `npx npm@11.14.0 install`) para
 # que `package.json` (incl. overrides) y el lock coincidan.
 #
+# IMPORTANT: NO declares `scripts.buildCommand` aquí. El Node.js buildpack reescribe
+# package.json cuando ese campo existe y, por bug conocido, descarta `overrides`,
+# `resolutions`, `peerDependencies`, `workspaces`, etc., rompiendo `npm ci`.
+# Workaround: definir `apphosting:build` directamente en package.json.
+# Ref: https://github.com/GoogleCloudPlatform/buildpacks/issues/621
+#
+# `runCommand` no dispara el rewrite, así que se puede mantener aquí.
+#
 # After first deploy, tune runConfig in Firebase Console or here.
 # Env vars for the browser build (REACT_APP_*) are best set in Console:
 # Hosting & Serverless → App Hosting → tu backend → Settings → Environment
@@ -19,5 +27,4 @@ runConfig:
 
 # CRA produces static files under build/. Serve them with `serve` on Cloud Run.
 scripts:
-  buildCommand: npm run build
   runCommand: npm run start:prod
