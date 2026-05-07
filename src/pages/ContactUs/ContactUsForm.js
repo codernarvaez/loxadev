@@ -9,9 +9,7 @@ export const ContactUsForm = () => {
   const methods = useForm({ resolver });
   const { handleSubmit } = methods;
 
-  const onSubmit = (data) => {
-    console.log(`data`, data);
-  };
+  const onSubmit = () => {};
 
   return (
     <FormProvider {...methods}>

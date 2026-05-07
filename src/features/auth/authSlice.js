@@ -9,7 +9,7 @@ export const login = createAsyncThunk("auth/login", async (data) => {
 const initialState = {
   currentUser: {},
   loading: false,
-  logginIn: false,
+  loggedIn: false,
   error: null,
 };
 
@@ -19,16 +19,19 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(login.pending, (state, action) => {
       state.loading = true;
+      state.error = null;
     });
 
     builder.addCase(login.fulfilled, (state, action) => {
       state.loading = false;
-      state.logginIn = true;
+      state.loggedIn = true;
+      state.error = null;
       state.currentUser = action.payload;
     });
 
     builder.addCase(login.rejected, (state, action) => {
       state.loading = false;
+      state.loggedIn = false;
       state.error = action.error;
     });
   },
