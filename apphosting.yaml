@@ -1,0 +1,19 @@
+# Firebase App Hosting — Create React App (static SPA + Node runtime)
+# Docs: https://firebase.google.com/docs/app-hosting/configure
+#
+# After first deploy, tune runConfig in Firebase Console or here.
+# Env vars for the browser build (REACT_APP_*) are best set in Console:
+# Hosting & Serverless → App Hosting → tu backend → Settings → Environment
+# (Console overrides apphosting.yaml per Firebase hierarchy.)
+
+runConfig:
+  minInstances: 0
+  maxInstances: 100
+  concurrency: 80
+  cpu: 1
+  memoryMiB: 512
+
+# CRA produces static files under build/. Serve them with `serve` on Cloud Run.
+scripts:
+  buildCommand: npm run build
+  runCommand: npm run start:prod

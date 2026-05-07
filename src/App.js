@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AppRouter } from "router/AppRouter";
 import { ThemeProvider } from "styled-components";
+import { initFirebaseAnalytics } from "./firebase";
 import { lightTheme, darkTheme, GlobalStyles } from "./utils/theme";
 
 function App() {
@@ -17,6 +18,10 @@ function App() {
     } else if (prefersDark) {
       setTheme("dark");
     }
+  }, []);
+
+  useEffect(() => {
+    initFirebaseAnalytics().catch(() => {});
   }, []);
 
   return (

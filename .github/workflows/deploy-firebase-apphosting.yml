@@ -1,0 +1,53 @@
+# Optional: deploy from GitHub Actions with a service account.
+# Automatic rollouts: use Firebase Console → App Hosting → connect this repo
+# (recommended; uses apphosting.yaml on each push to the live branch).
+#
+# To use this workflow, add repository secrets:
+#   FIREBASE_SERVICE_ACCOUNT     — full JSON of a service account (App Hosting deploy)
+#   FIREBASE_PROJECT_ID
+#   FIREBASE_APPHOSTING_BACKEND_ID — same as backendId in firebase.json
+# Optional (bake API URLs into the static build in CI only):
+#   REACT_APP_API_USERS_URI
+#   REACT_APP_API_LOXADEV_SITE
+#
+# Run: Actions → "Deploy Firebase App Hosting" → Run workflow.
+
+name: Deploy Firebase App Hosting
+
+on: workflow_dispatch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: CI=true npm test -- --watchAll=false
+
+      - name: Build
+        run: npm run build
+        env:
+          REACT_APP_API_USERS_URI: ${{ secrets.REACT_APP_API_USERS_URI }}
+          REACT_APP_API_LOXADEV_SITE: ${{ secrets.REACT_APP_API_LOXADEV_SITE }}
+
+      - name: Deploy to App Hosting
+        run: npx --yes firebase-tools@14.4.0 deploy --only apphosting:${{ secrets.FIREBASE_APPHOSTING_BACKEND_ID }} --project ${{ secrets.FIREBASE_PROJECT_ID }} --non-interactive --force
