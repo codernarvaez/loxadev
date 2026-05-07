@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Loxadev — Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SPA en React (Create React App) para el sitio Loxadev: Redux, React Router, styled-components y Firebase (Analytics). El backend HTTP usa variables `REACT_APP_*`.
 
-## Available Scripts
+## Requisitos
 
-In the project directory, you can run:
+- **Node.js** ≥ 20  
+- **npm** ≥ 11.14 (alineado con Firebase App Hosting y `package-lock.json`; puedes usar `npx npm@11.14.0 ci`)
 
-### `yarn start`
+## Instalación y desarrollo en local
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+git clone <tu-repo>
+cd loxadev-frontend
+npx npm@11.14.0 ci
+npm start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Abre [http://localhost:3000](http://localhost:3000). Los cambios recargan solos.
 
-### `yarn test`
+### Variables de entorno
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Create React App solo incluye variables que empiezan por `REACT_APP_`.
 
-### `yarn build`
+| Archivo | Uso |
+|--------|-----|
+| `.env.development` | Valores por defecto para `npm start` (puede versionarse). |
+| `.env.local` | Sobrescribe desarrollo; **no** subir secretos reales si el repo es público (está en `.gitignore`). |
+| `.env.production` | Build de producción (`npm run build`). |
+| `.env.test` | Tests (`npm test`). |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Plantilla sin valores reales: **`.env.example`**. Para una copia rápida en tu máquina:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cp .env.example .env.local
+# edita .env.local con tus claves y URLs de API
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Firebase y APIs se parametrizan así (no van hardcodeadas en el código):
 
-### `yarn eject`
+- **Firebase**: `REACT_APP_FIREBASE_API_KEY`, `REACT_APP_FIREBASE_AUTH_DOMAIN`, `REACT_APP_FIREBASE_PROJECT_ID`, `REACT_APP_FIREBASE_STORAGE_BUCKET`, `REACT_APP_FIREBASE_MESSAGING_SENDER_ID`, `REACT_APP_FIREBASE_APP_ID`, `REACT_APP_FIREBASE_MEASUREMENT_ID`
+- **APIs propias** (cuando existan backend definitivos): `REACT_APP_API_USERS_URI`, `REACT_APP_API_LOXADEV_SITE`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Scripts útiles
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Comando | Descripción |
+|--------|-------------|
+| `npm start` | Servidor de desarrollo |
+| `npm test` | Tests (CI: `CI=true npm test -- --watchAll=false`) |
+| `npm run build` | Genera la carpeta `build/` en modo producción |
+| `npm run start:prod` | Tras un build, sirve la carpeta `build` con `serve` (útil para comprobar el bundle localmente) |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Despliegue en local (probar el mismo artefacto que producción)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 1. Build de producción
 
-## Learn More
+```bash
+npx npm@11.14.0 ci
+npm run build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Se usa automáticamente **`.env.production`** (valores “producción” para Firebase y el cliente).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 2. Servir el estático en tu máquina
 
-### Code Splitting
+Opción A — script del proyecto:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm run start:prod
+```
 
-### Analyzing the Bundle Size
+Por defecto **serve** usa la variable `PORT` si existe; si no, el puerto por defecto del paquete.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Opción B — CLI explícito:
 
-### Making a Progressive Web App
+```bash
+npx serve -s build -l 3000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Abre la URL que imprime la consola (p. ej. `http://localhost:3000`). Las rutas del SPA las resuelve `serve -s` (fallback a `index.html`).
 
-### Advanced Configuration
+### 3. Desplegar a Firebase App Hosting desde tu PC (opcional)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Requiere [Firebase CLI](https://firebase.google.com/docs/cli) ≥ 14.4, proyecto en plan **Blaze** y backend de App Hosting ya creado y enlazado en `firebase.json`.
 
-### Deployment
+```bash
+npm install -g firebase-tools
+firebase login
+firebase deploy --only apphosting:loxadev-web --project <TU_PROJECT_ID>
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Si el `backendId` no es `loxadev-web`, cámbialo en `firebase.json` o usa `--only apphosting:<id>`.
 
-### `yarn build` fails to minify
+El flujo sube el código y construye en la nube con la misma lógica que el repositorio conectado a GitHub; en local puedes validar antes con los pasos 1–2.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## CI en GitHub Actions
+
+El workflow **CI** ejecuta `npm ci` (con npm 11.14), tests y `npm run build`. Los secretos de APIs para el build en la nube puedes definirlos en Firebase App Hosting (entorno del backend) o en GitHub Actions si usas despliegue manual.
+
+## Referencias
+
+- [Create React App — Variables de entorno](https://create-react-app.dev/docs/adding-custom-environment-variables/)
+- [Firebase App Hosting](https://firebase.google.com/docs/app-hosting)

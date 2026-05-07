@@ -1,9 +1,9 @@
 # Firebase App Hosting — Create React App (static SPA + Node runtime)
 # Docs: https://firebase.google.com/docs/app-hosting/configure
 #
-# El build de Google ejecuta `npm ci`: el repo DEBE incluir package-lock.json
-# en la raíz del backend (mismo nivel que package.json) y estar en sync con
-# package.json. Confirma en GitHub que ves package-lock.json y vuelve a desplegar.
+# El build de Google instala `npm@11.14.0` y luego `npm ci`. El package-lock.json
+# debe generarse con la misma major de npm (p. ej. `npx npm@11.14.0 install`) para
+# que `package.json` (incl. overrides) y el lock coincidan.
 #
 # After first deploy, tune runConfig in Firebase Console or here.
 # Env vars for the browser build (REACT_APP_*) are best set in Console:

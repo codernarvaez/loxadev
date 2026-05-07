@@ -2,29 +2,33 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics, isSupported } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey:
-    process.env.REACT_APP_FIREBASE_API_KEY ??
-    "AIzaSyADpihRvumqkP0pDdisqQIRScGh5HVEnoc",
-  authDomain:
-    process.env.REACT_APP_FIREBASE_AUTH_DOMAIN ?? "loxadev-afa68.firebaseapp.com",
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID ?? "loxadev-afa68",
-  storageBucket:
-    process.env.REACT_APP_FIREBASE_STORAGE_BUCKET ??
-    "loxadev-afa68.firebasestorage.app",
-  messagingSenderId:
-    process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID ?? "344388726453",
-  appId:
-    process.env.REACT_APP_FIREBASE_APP_ID ??
-    "1:344388726453:web:bb05eca6d149d25cee98fc",
-  measurementId:
-    process.env.REACT_APP_FIREBASE_MEASUREMENT_ID ?? "G-S39KRZ8C24",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
+
+function missingFirebaseKeys() {
+  return Object.entries(firebaseConfig)
+    .filter(([, value]) => value == null || value === "")
+    .map(([key]) => key);
+}
+
+const missing = missingFirebaseKeys();
+if (missing.length > 0) {
+  throw new Error(
+    `Firebase: faltan variables REACT_APP_FIREBASE_* (${missing.join(", ")}). ` +
+      `Consulta .env.example y usa .env.development / .env.production / .env.local según el modo.`
+  );
+}
 
 export const firebaseApp = initializeApp(firebaseConfig);
 
 /**
  * Analytics solo en navegador y cuando el entorno lo permite (p. ej. no en tests).
- * La API key del cliente es pública por diseño; refuerza reglas en Firebase Console.
  */
 export async function initFirebaseAnalytics() {
   if (process.env.NODE_ENV === "test") return null;
